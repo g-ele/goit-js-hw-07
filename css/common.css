@@ -12,3 +12,116 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+/* Базові налаштування для шрифту та сторінки */
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f4f4fd; /* Світлий фон сторінки, щоб білий список було видно */
+  padding: 24px;
+  margin: 0;
+}
+
+/* Посилання "Go back" */
+p a {
+  color: #4d5ae5;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* ================= 1. ГОЛОВНИЙ СПИСОК (ul#categories) ================= */
+#categories {
+  list-style: none;         /* Прибираємо чорні крапки списку */
+  margin: 24px 0 0 0;
+  padding: 24px;            /* Внутрішній відступ білого контейнера */
+  width: 440px;             /* Ширина списку з Фігми */
+  min-height: 888px;        /* Висота з Фігми */
+  border-radius: 8px;       /* Заокруглення кутів головного контейнера */
+  background: #FFFFFF;      /* Білий фон усього списку */
+  
+  display: flex;
+  flex-direction: column;
+  gap: 24px;                /* Відступ 24px між трьома великими категоріями */
+  box-sizing: border-box;   /* Щоб падінги не розтягували ширину більше ніж 440px */
+}
+
+/* ================= 2. КАРТКА КАТЕГОРІЇ (li.item) ================= */
+#categories .item {
+  width: 392px;             /* Ширина картки з Фігми */
+  min-height: 264px;        /* Висота картки з Фігми */
+  background: #F6F6FE;      /* Фон картки з Фігми */
+  border-radius: 8px;       /* Заокруглення з Фігми */
+  padding: 16px;            /* Внутрішній відступ картки з Фігми */
+  
+  display: flex;
+  flex-direction: column;
+  gap: 16px;                /* Відступ між заголовком (Animals) та списком полів */
+  box-sizing: border-box;
+}
+
+/* ================= 3. ЗАГОЛОВОК (h2) ================= */
+#categories .item h2 {
+  margin: 0;                /* Скидаємо стандартні відступи браузера */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;         /* SemiBold з Фігми */
+  font-size: 24px;          /* Розмір шрифту з Фігми */
+  line-height: 32px;        /* Висота рядка з Фігми */
+  letter-spacing: 0.04em;   /* Letter spacing 4% з Фігми */
+  color: #2E2F42;           /* Колір тексту з Фігми */
+}
+
+/* ================= 4. ВНУТРІШНЯ РАМКА / СПИСОК (ul) ================= */
+#categories .item ul {
+  list-style: none;         /* Прибираємо крапки у вкладеного списку */
+  padding: 0;
+  margin: 0;
+  width: 360px;             /* Ширина блоку з Фігми */
+  
+  display: flex;
+  flex-direction: column;
+  gap: 8px;                 /* Відступ 8px між текстовими полями */
+}
+
+/* ================= 5. САМІ ПОЛЯ / ЕЛЕМЕНТИ (li) ================= */
+#categories .item ul li {
+  width: 360px;             /* Ширина поля з Фігми */
+  height: 40px;             /* Висота поля з Фігми */
+  background: #FFFFFF;      /* Білий фон поля */
+  color: #2E2F42;           /* Колір тексту елементів */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  
+  display: flex;
+  align-items: center;      /* Ідеально центруємо текст по вертикалі всередині поля */
+  padding: 0 16px;          /* Бокові відступи всередині білого поля */
+  
+  border: 1px solid #8E8F99;/* Стандартна сіра рамка для полів */
+  border-radius: 4px;       /* Легке заокруглення кутів поля */
+  box-sizing: border-box;
+}
+/* Завдання 2*/
+.gallery {
+  list-style: none;         /* Прибираємо дефолтні маркери-крапки */
+  padding: 0;
+  margin: 24px 0 0 0;
+  
+  display: flex;
+  flex-wrap: wrap;          /* Дозволяємо перенесення карток на новий рядок */
+  row-gap: 48px;            /* Відступ 48px між рядками */
+  column-gap: 24px;         /* Відступ 24px між сусідніми картками */
+  width: 1128px;            /* Загальна ширина сітки для трьох карток в ряд */
+}
+
+/* ================= 2. КАРТКА ГАЛЕРЕЇ (li.gallery-item) ================= */
+.gallery-item {
+  /* Розраховуємо ширину однієї картки: (100% - сума двох відступів по 24px) розділити на 3 */
+  flex-basis: calc((100% - 48px) / 3); 
+}
+
+/* ================= 3. ЗОБРАЖЕННЯ (img.gallery-img) ================= */
+.gallery-img {
+  display: block;           /* Прибираємо нижній дефолтний зазор під картинкою */
+  width: 100%;              /* Картинка займає всю ширину li.gallery-item */
+  height: 300px;            /* Стандартна висота карток у макетах GoIT */
+  object-fit: cover;        /* Картинка обрізається по краях, зберігаючи пропорції */
+  border-radius: 4px;       /* Легке заокруглення кутів зображень */
+}
